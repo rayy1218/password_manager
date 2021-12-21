@@ -1,21 +1,48 @@
 {
   "name": "password-manager-app",
+  "productName": "Password Manager",
+  "description": "Study",
+  "author": "Ray",
+  "homepage": "./",
   "version": "0.1.0",
   "private": true,
+  "main": "src/main/main.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "bootstrap": "^5.1.3",
+    "electron-is-dev": "^2.0.0",
+    "fuse.js": "^6.4.6",
     "react": "^17.0.2",
+    "react-bootstrap": "^2.0.3",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "sqlite3": "^5.0.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+
+    "electron": "wait-on tcp:3000 && electron .",
+    "dev": "concurrently -k \"BROWSER=none npm start\" \"npm:electron\"",
+
+    "build": "react-scripts build && npm run build-electron && npm run package",
+    "build-electron": "mkdir build/src && cp -r src/. build/src",
+    "package": "electron-builder build --linux -c.extraMetadata.main=build/src/main/main.js --publish never"
+  },
+  "build": {
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "publish": {
+      "provider": "github",
+      "repo": "password-manager",
+      "owner": "rayy1218"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +61,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^6.4.0",
+    "dmg-builder": "^22.14.10",
+    "electron": "^16.0.4",
+    "electron-builder": "^22.14.5",
+    "react-router-dom": "^6.0.2",
+    "wait-on": "^6.0.0"
   }
 }

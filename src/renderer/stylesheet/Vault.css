@@ -1,0 +1,92 @@
+.vault-body {
+    height: 100vh; 
+}
+
+.header {
+    border-bottom: 1px lightGrey solid;
+    overflow: hidden;
+    padding: 0 1%;
+    height: 8vh;
+}
+
+.header-left {
+    float: left
+}
+
+.header-right {
+    float: right
+}
+
+.content {
+    clear: both;
+    min-height: 92vh;
+    width: 90%;
+    margin: auto;
+    border: 1px lightGrey solid;
+    border-top: none;
+    border-bottom: none;
+}
+
+.control {
+    overflow: hidden;
+    border-bottom: 1px lightGrey solid;
+    padding: 1%;
+}
+
+.search-bar {
+    float:right;
+}
+
+.add-item-btn {
+    float: left;
+}
+
+.flex-container {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 95%;
+    height: 100%;
+    margin: auto; 
+}
+
+.flex-item {
+    margin: 1vh 0;
+    padding: 2vh;
+    border: 1px lightGrey solid
+}
+
+.item-title {
+    overflow: hidden;
+}
+
+.item-title-content {
+    float: left;
+}
+
+.item-title-btns {
+    float: right;
+}
+
+.item.content {
+    clear: both;
+}
+
+.password-row {
+    overflow: hidden;
+}
+
+.password-row-content {
+    float: left;
+}
+
+.password-row-btns {
+    float: right;
+}
+
+.password-row {
+    display: flex;
+}
+
+.password-row {
+    
+}

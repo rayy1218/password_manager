@@ -1,0 +1,21 @@
+input, button {
+    margin: 5px;
+}
+
+.login-register-tabs {
+    width: 40%;
+    margin: auto;
+}
+
+.tab-content {
+    border: 0.5px LightGrey solid;
+    border-top: none;
+    padding: 20px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
