@@ -64,6 +64,9 @@ function LoginForm(props) {
             case 'password_failure':
                 setAlertShow({username_failure: false, password_failure: true})
                 break
+
+            default:
+                console.log(`Unknown case ${login_check_reply} at handleSubmit in Homepage.js:LoginForm`)
         }
     }
 
@@ -116,6 +119,9 @@ function RegisterForm(props) {
             case 'username_failure':
                 setAlertShow({username_failure: true})
                 break
+
+            default:
+                console.log(`Unknown case ${register_user_reply} at handleSubmit in Homepage.js:RegisterForm`)
         }
     }
     
