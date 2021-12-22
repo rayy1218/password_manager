@@ -46,20 +46,7 @@ function Content(props) {
         const result = await window.dbcall.getAll({statement: statement})
         setList(result)
     }
-
-    const deleteItem = (password_id) => {
-        const statement = 
-            `DELETE FROM passwords 
-             WHERE password_id = ${password_id}`
-        window.dbcall.query({statement: statement})
-
-        updateList()
-    }
-    
-    const handleCopy = (password_string) => {
-        window.clipboard.write(password_string)
-    }
-    
+   
     useEffect(() => { 
         updateList()
     }, [props.user])
@@ -212,7 +199,7 @@ function Item(props) {
                 <InputGroup.Text>Website</InputGroup.Text>
                 <Form.Control 
                     readOnly size='sm' type='text' 
-                    value={props.item.password_website || 'null'} 
+                    value={props.item.password_url || 'null'} 
                 />
             </InputGroup>
             <InputGroup>

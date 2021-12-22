@@ -1,13 +1,10 @@
 import {
-    BrowserRouter, HashRouter as Router, Routes, Route, Link, useNavigate
+    HashRouter as Router, Routes, Route
 } from 'react-router-dom'
 import {useState} from 'react'
 
 import Homepage from './pages/Homepage.js'
 import Vault from "./pages/Vault.js"
-
-import Dropdown from 'react-bootstrap/Dropdown'
-import DropdownButton from 'react-bootstrap/DropdownButton'
 
 function App(props) {
     //Following two function is solution for refresh of page after query
